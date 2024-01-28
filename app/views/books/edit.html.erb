@@ -1,5 +1,11 @@
 <%= link_to("Back to List", books_path, :class => 'back-link') %>
 
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+<% end %>
+
 <div class="books edit">
   <h2>Edit Book</h2>
 
