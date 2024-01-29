@@ -15,15 +15,14 @@ RSpec.describe 'Creating a book', type: :feature do
     fill_in "book[title]", with: 'test sunny book'
     click_on 'Create Book'
     visit books_path
-    expect(flash[:success]).to be_present
+    expect(controller).to set_flash[:notify]
   end
 
   scenario 'flash notice rainy' do
     visit new_book_path
-    fill_in "book[title]", with: 'harry potter'
     click_on 'Create Book'
     visit books_path
-    expect(page).to have_content('harry potter')
+    expect(controller).to set_flash[:alert]
   end
 end
 
