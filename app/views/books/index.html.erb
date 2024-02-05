@@ -28,7 +28,7 @@
       <td class="actions">
         <%= link_to("Show", book_path(book), class: 'action show') %>
         <%= link_to("Update", edit_book_path(book), class: 'action update') %>
-        <%= link_to("Delete", delete_book_path(book), class: 'action delete') %>
+        <%= link_to("Delete", book_path(book), method: :delete, data: { confirm: "Are you sure?" }, class: 'action delete') %>
       </td>
     </tr>
     <% end %>
